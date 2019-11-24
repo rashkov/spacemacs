@@ -67,6 +67,14 @@ You can toggle =refmt= on save with =SPC m r t=. To permanently enable it, add t
 
 in your =dotspacemacs-configuration-layers=.
 
+By default, refmt will wrap text longer than 80 characters. To specify a custom value (100 in this example), add the following to your =dotspacemacs-user-config=:
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'reason-mode-hook (lambda ()
+    (set-fill-column 100)
+    (customize-set-variable 'refmt-width-mode 'fill)))
+#+END_SRC
+
 * Key bindings
 The main key bindings, see =packages.el= for the main list.
 
